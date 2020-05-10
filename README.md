@@ -1,3 +1,3 @@
-# static-diagnostic-tools
+# Static Build Guides
 
-[strace](strace.md)
+* [strace](strace.md)
