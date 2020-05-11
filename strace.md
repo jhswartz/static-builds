@@ -19,18 +19,17 @@ $ cd strace-5.6
 Substitute *arm-linux-gnueabihf* with your toolchain's target triplet.
 ```
 $ export TARGET=arm-linux-gnueabihf
-$ export CFLAGS="-static -pthread"
-$ export CC=${TARGET}-gcc
-$ export STRIP=${TARGET}-strip
 ```
 
 ## Build
 ```
-$ ./configure --host=${TARGET}
+$ mkdir build
+$ cd build
+$ ../configure --host=${TARGET} CFLAGS="-pthread" LDFLAGS="-static"
 $ make
 ```
 
 ## Strip
 ```
-$ ${STRIP} strace
+$ ${TARGET}-strip strace
 ```
