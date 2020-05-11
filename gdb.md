@@ -49,16 +49,3 @@ $ make MAKEINFO=true
 ```
 $ ${TARGET}-strip gdb/{gdb,gdbserver/{gdbreplay,gdbserver}}
 ```
-
-## Check
-```
-$ ls -ahl gdb/{gdb,gdbserver/{gdbreplay,gdbserver}}
--rwxr-xr-x 1 user user 5.0M May 11 10:42 gdb/gdb
--rwxr-xr-x 1 user user 872K May 11 10:42 gdb/gdbserver/gdbreplay
--rwxr-xr-x 1 user user 1.2M May 11 10:42 gdb/gdbserver/gdbserver
-
-$ file -b gdb/{gdb,gdbserver/{gdbreplay,gdbserver}}
-ELF 32-bit LSB executable, ARM, EABI5 version 1 (GNU/Linux), statically linked, ...
-ELF 32-bit LSB executable, ARM, EABI5 version 1 (GNU/Linux), statically linked, ...
-ELF 32-bit LSB executable, ARM, EABI5 version 1 (GNU/Linux), statically linked, ...
-```
