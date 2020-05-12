@@ -16,20 +16,17 @@ $ cd strace-5.6
 ```
 
 ## Prepare
-Substitute *arm-linux-gnueabihf* with your toolchain's target triplet.
+Substitute *arm-linux-gnueabihf* with your toolchain's target triplet, and adjust STATIC_ROOT if need be.
 ```
 $ export TARGET=arm-linux-gnueabihf
+$ export STATIC_ROOT=`readlink -f ~/${TARGET}-static`
 ```
 
 ## Build
 ```
 $ mkdir build
 $ cd build
-$ ../configure --host=${TARGET} CFLAGS="-pthread" LDFLAGS="-static"
+$ ../configure --host="${TARGET}" --prefix="${STATIC_ROOT}" CFLAGS="-pthread" LDFLAGS="-static"
 $ make
-```
-
-## Strip
-```
-$ ${TARGET}-strip strace
+$ make install-strip
 ```
