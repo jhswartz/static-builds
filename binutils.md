@@ -23,7 +23,7 @@ $ sed -i -e 's/$MISSING makeinfo/true/g' configure
 ```
 
 ## Prepare
-Substitute *arm-linux-gnueabihf* with your toolchain's target triplet, and adjust the *STATIC_ROOT* to your liking.
+Substitute *arm-linux-gnueabihf* with your toolchain's target triplet, and adjust *STATIC_ROOT* if need be.
 ```
 $ export TARGET=arm-linux-gnueabihf
 $ export STATIC_ROOT=`readlink -f ~/${TARGET}-static`
