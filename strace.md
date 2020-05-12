@@ -16,7 +16,7 @@ $ cd strace-5.6
 ```
 
 ## Prepare
-Substitute *arm-linux-gnueabihf* with your toolchain's target triplet, and adjust STATIC_ROOT if need be.
+Substitute *arm-linux-gnueabihf* with your toolchain's target triplet, and adjust *STATIC_ROOT* if need be.
 ```
 $ export TARGET=arm-linux-gnueabihf
 $ export STATIC_ROOT=`readlink -f ~/${TARGET}-static`
