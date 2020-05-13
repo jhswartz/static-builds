@@ -2,10 +2,9 @@
 
 ## Prerequisites
 * A toolchain compatible with the target architecture and operating system.
-* OpenSSL static libraries cross-compiled for the target, if you require SSL/TLS support.
+* [OpenSSL](openssl.md) if you need TLS/SSL support.
 
 ## Download
-Substitute *1.7.3.4* with the latest release.
 ```
 $ wget http://www.dest-unreach.org/socat/download/socat-1.7.3.4.tar.gz
 ```
@@ -18,6 +17,7 @@ $ cd socat-1.7.3.4
 
 ## Patch
 ```
+$ sed -i -e 's/LIBS="$LIBS -lssl/& -lcrypto -lpthread -ldl/p' configure
 $ sed -i -e 's/strip $(PROGS)/$(TARGET)-&/g' Makefile.in
 ```
 
@@ -32,7 +32,8 @@ $ export STATIC_ROOT=`readlink -f ~/${TARGET}-static`
 ```
 $ mkdir build
 $ cd build
-$ ../configure --host="${TARGET}" --prefix="${STATIC_ROOT}" LDFLAGS="-static"
+$ ../configure --host="${TARGET}" --prefix="${STATIC_ROOT}" \
+  CFLAGS="-I${STATIC_ROOT}/include" LDFLAGS="-static -L${STATIC_ROOT}/lib"
 $ make
 $ make strip
 $ make install
