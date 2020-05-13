@@ -17,9 +17,7 @@ $ cd socat-1.7.3.4
 ```
 
 ## Patch
-Use the target toolchain's strip command.
 ```
-$ cp Makefile.in{,.orig}
 $ sed -i -e 's/strip $(PROGS)/$(TARGET)-&/g' Makefile.in
 ```
 
