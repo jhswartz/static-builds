@@ -5,6 +5,13 @@
 * A toolchain compatible with the target architecture and operating system.
 ```
 
+## Prepare
+Substitute *arm-linux-gnueabihf* with your toolchain's target triplet.
+```
+$ export TARGET=arm-linux-gnueabihf
+$ export STATIC_ROOT=`readlink -f ~/${TARGET}-static`
+```
+
 ## Download
 ```
 $ wget https://github.com/openssl/openssl/archive/OpenSSL_1_1_1g.tar.gz
@@ -14,13 +21,6 @@ $ wget https://github.com/openssl/openssl/archive/OpenSSL_1_1_1g.tar.gz
 ```
 $ tar xzf OpenSSL_1_1_1g.tar.gz 
 cd openssl-OpenSSL_1_1_1g
-```
-
-## Prepare
-Substitute *arm-linux-gnueabihf* with your toolchain's target triplet.
-```
-$ export TARGET=arm-linux-gnueabihf
-$ export STATIC_ROOT=`readlink -f ~/${TARGET}-static`
 ```
 
 ## Build
