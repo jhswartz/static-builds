@@ -16,9 +16,7 @@ cd binutils-2.34
 ```
 
 ## Patch
-Don't apply the following if you have makeinfo and actually want the documentation installed.
 ```
-$ cp configure{,.orig}
 $ sed -i -e 's/$MISSING makeinfo/true/g' configure
 ```
 
