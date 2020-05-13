@@ -3,8 +3,14 @@
 ## Prerequisites
 * A toolchain compatible with the target architecture and operating system.
 
+## Prepare
+Substitute *arm-linux-gnueabihf* with your toolchain's target triplet.
+```
+$ export TARGET=arm-linux-gnueabihf
+$ export STATIC_ROOT=`readlink -f ~/${TARGET}-static`
+```
+
 ## Download
-Substitute *v5.6* with the latest release.
 ```
 $ wget https://github.com/strace/strace/releases/download/v5.6/strace-5.6.tar.xz
 ```
@@ -13,13 +19,6 @@ $ wget https://github.com/strace/strace/releases/download/v5.6/strace-5.6.tar.xz
 ```
 $ tar xJf strace-5.6.tar.xz
 $ cd strace-5.6
-```
-
-## Prepare
-Substitute *arm-linux-gnueabihf* with your toolchain's target triplet, and adjust *STATIC_ROOT* if need be.
-```
-$ export TARGET=arm-linux-gnueabihf
-$ export STATIC_ROOT=`readlink -f ~/${TARGET}-static`
 ```
 
 ## Build
