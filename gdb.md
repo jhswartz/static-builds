@@ -16,36 +16,25 @@ cd gdb-9.1
 ```
 
 ## Patch
-Overcome non-configurable obstacles that force dynamic linkage.
 ```
-$ cp gdb/configure{,.orig}
-$ sed -i -e "s/RDYNAMIC=['\"].*['\"]/RDYNAMIC=''/g" gdb/configure
-
-$ cp gdb/Makefile.in{,.orig}
-$ sed -i -e 's/^CC_LD.*$/& -static/g' gdb/Makefile.in
-
-$ cp gdb/gdbserver/configure{,.orig}
-$ sed -i -e "s/RDYNAMIC=['\"].*['\"]/RDYNAMIC=''/g" gdb/gdbserver/configure
-
-$ cp gdb/gdbserver/Makefile.in{,.orig}
-$ sed -i -e 's/^CC_LD.*$/& -static/g' gdb/gdbserver/Makefile.in
+$ sed -i -e 's/$MISSING makeinfo/true/g' configure
+$ sed -i -e "s/RDYNAMIC=['\"].*['\"]/RDYNAMIC=''/g" gdb/{,gdbserver/}configure
+$ sed -i -e 's/^CC_LD.*$/& -static/g' gdb/{,gdbserver/}Makefile.in
 ```
 
 ## Prepare 
 Substitute *arm-linux-gnueabihf* with your toolchain's target triplet.
 ```
 $ export TARGET=arm-linux-gnueabihf
+$ export STATIC_ROOT=`readlink -f ~/${TARGET}-static`
 ```
 
 ## Build
 ```
 $ mkdir build
 $ cd build
-$ ../configure --host=${TARGET}
-$ make MAKEINFO=true
-```
-
-## Strip
-```
+$ ../configure --host="${TARGET}" --prefix="${STATIC_ROOT}" --disable-sim
+$ make
 $ ${TARGET}-strip gdb/{gdb,gdbserver/{gdbreplay,gdbserver}}
+$ make install
 ```
