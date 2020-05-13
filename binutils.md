@@ -3,8 +3,14 @@
 ## Prerequisites
 * A toolchain compatible with the target architecture and operating system.
 
+## Prepare
+Substitute *arm-linux-gnueabihf* with your toolchain's target triplet, and adjust *STATIC_ROOT* if need be.
+```
+$ export TARGET=arm-linux-gnueabihf
+$ export STATIC_ROOT=`readlink -f ~/${TARGET}-static`
+```
+
 ## Download
-Substitute *2.34* with the latest release.
 ```
 $ wget http://ftp.gnu.org/gnu/binutils/binutils-2.34.tar.xz
 ```
@@ -18,13 +24,6 @@ cd binutils-2.34
 ## Patch
 ```
 $ sed -i -e 's/$MISSING makeinfo/true/g' configure
-```
-
-## Prepare
-Substitute *arm-linux-gnueabihf* with your toolchain's target triplet, and adjust *STATIC_ROOT* if need be.
-```
-$ export TARGET=arm-linux-gnueabihf
-$ export STATIC_ROOT=`readlink -f ~/${TARGET}-static`
 ```
 
 ## Build
