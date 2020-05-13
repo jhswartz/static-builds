@@ -1,4 +1,4 @@
-# Static Build Guides
+# Static Builds
 
 * [binutils v2.34](binutils.md)
 * [gdb v9.1](gdb.md)
