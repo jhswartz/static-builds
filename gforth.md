@@ -3,6 +3,7 @@
 
 ## Prerequisites
 * A toolchain compatible with the target architecture and operating system.
+* QEMU user emulation and binfmt_misc, assuming cross-compilation under Linux.
 * [gdb](gdb.md) if your target needs to use disasm-gdb for discode.
 
 
