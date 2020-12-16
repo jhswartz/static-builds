@@ -1,5 +1,7 @@
 # Static Builds
 
+The following documentation describes how to build a small selection of tools as statically-compiled binaries that may be helpful in extending the functionallity of pre-built UNIX-like operating systems that you may have little to no control over, such as the untrustworthy builds of Android or GNU/Linux shipped on devices such as cellphones, tablets, TV boxes, and routers.
+
 * [binutils v2.34](binutils.md)
 * [e2fsprogs v1.45.6](e2fsprogs.md)
 * [gdb v9.1](gdb.md)
