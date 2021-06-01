@@ -8,6 +8,7 @@ The following documentation describes how to build a small selection of statical
 * [gforth v0.7.3](gforth.md)
 * [gptfdisk v1.0.5](gptfdisk.md)
 * [libevent v2.1.12](libevent.md)
+* [oathtool v2.6.7](oathtool.md)
 * [openssl v1.1.1g](openssl.md)
 * [socat v1.7.3.4](socat.md)
 * [strace v5.6](strace.md)
