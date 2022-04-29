@@ -4,8 +4,9 @@ The following documentation describes how to build a small selection of statical
 
 * [binutils v2.34](binutils.md)
 * [e2fsprogs v1.45.6](e2fsprogs.md)
-* [gdb v9.1](gdb.md)
+* [gdb v11.2](gdb.md)
 * [gforth v0.7.3](gforth.md)
+* [gmp v6.2.1](gmp.md)
 * [gptfdisk v1.0.5](gptfdisk.md)
 * [libevent v2.1.12](libevent.md)
 * [oathtool v2.6.7](oathtool.md)
