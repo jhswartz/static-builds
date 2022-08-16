@@ -1,6 +1,6 @@
 # Static Builds
 
-The following documentation describes how to build a small selection of statically-compiled tools and libraries that may be helpful in extending the functionallity of pre-built UNIX-like operating systems that you may have little to no control over, such as untrustworthy builds of Android or GNU/Linux shipped on devices such as cellphones, tablets, TV boxes, and routers.
+The following documentation describes how to build a small selection of statically-linked tools and libraries that may be helpful in extending the functionallity of pre-built UNIX-like operating systems that you may have little to no control over, such as untrustworthy builds of Android or GNU/Linux shipped on devices such as cellphones, tablets, TV boxes, and routers.
 
 * [binutils v2.34](binutils.md)
 * [dropbear 2022.82](dropbear.txt)
