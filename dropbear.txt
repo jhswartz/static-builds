@@ -1,0 +1,33 @@
+dropbear 2022.82
+
+
+PREPARE
+
+  export TARGET=arm-linux-gnueabihf
+  export STATIC_ROOT=`readlink -f ${TARGET}-static`
+
+
+DOWNLOAD
+
+  wget https://matt.ucc.asn.au/dropbear/releases/dropbear-2022.82.tar.bz2
+
+
+EXTRACT
+
+  tar xjf dropbear-2022.82.tar.bz2
+  cd dropbear-2022.82
+
+
+CONFIGURE
+
+  mkdir build
+  cd build
+  ../configure --host="$TARGET" --prefix="$STATIC_ROOT" --enable-static
+  vi localoptions.h
+
+
+BUILD
+
+  make
+  make strip
+  make install

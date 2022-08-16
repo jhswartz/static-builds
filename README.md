@@ -3,6 +3,7 @@
 The following documentation describes how to build a small selection of statically-compiled tools and libraries that may be helpful in extending the functionallity of pre-built UNIX-like operating systems that you may have little to no control over, such as untrustworthy builds of Android or GNU/Linux shipped on devices such as cellphones, tablets, TV boxes, and routers.
 
 * [binutils v2.34](binutils.md)
+* [dropbear 2022.82](dropbear.txt)
 * [e2fsprogs v1.45.6](e2fsprogs.md)
 * [gdb v11.2](gdb.md)
 * [gforth v0.7.3](gforth.md)
