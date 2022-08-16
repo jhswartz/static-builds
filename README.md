@@ -14,4 +14,4 @@ The following documentation describes how to build a small selection of statical
 * [socat v1.7.3.4](socat.md)
 * [strace v5.6](strace.md)
 * [tor v0.4.4.6](tor.md)
-* [zlib v1.2.11](zlib.md)
+* [zlib v1.2.12](zlib.txt)

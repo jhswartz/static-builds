@@ -1,0 +1,27 @@
+zlib 1.2.12
+
+
+PREPARE
+
+  export TARGET=arm-linux-gnueabihf
+  export STATIC_ROOT=`readlink -f ${TARGET}-static`
+
+
+DOWNLOAD
+
+  wget https://zlib.net/zlib-1.2.12.tar.gz
+
+
+EXTRACT
+
+  tar xzf zlib-1.2.12.tar.gz 
+  cd zlib-1.2.12
+
+
+BUILD
+
+  mkdir build
+  cd build
+  prefix="${STATIC_ROOT}" CC="${TARGET}-gcc" CFLAGS="-I${STATIC_ROOT}/include" LDFLAGS="-L${STATIC_ROOT}/lib" ../configure --static
+  make
+  make install
